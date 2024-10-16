@@ -13,15 +13,17 @@ mongoose
   })
   .catch((error) => {
     console.log(error);
-  });
+  });     //to connect to mongodb
+
+//checking root path
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use(express.json());
+app.use(express.json());    //to accept json data
 
-app.use("/project", projectRoutes);
+app.use("/project", projectRoutes);  //to use routes
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-});
+});     //to start server

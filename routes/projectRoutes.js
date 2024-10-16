@@ -6,7 +6,7 @@ const {
     createProject,
     updateProject,
     deleteProject
-} = require('../controller/projectController');
+} = require('../controller/projectController');   //importing controller
 
 // GET all projects
 router.get('/get', getProjects);

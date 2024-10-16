@@ -1,5 +1,7 @@
 const projects = require('../model/projectModel');
 
+
+// Get all projects
 const getProjects = async (req, res) => {
     try {
         const projectDetails = await projects.find();
@@ -10,6 +12,7 @@ const getProjects = async (req, res) => {
     }
 }
 
+// Get single project
 const getProject = async (req, res) => {
     try {
         const project = await projects.findById(req.params.id);
@@ -19,6 +22,7 @@ const getProject = async (req, res) => {
     }
 }
 
+// POST create project
 const createProject = async (req, res) => {
     const project = req.body;
     const newProject = new projects(project);
@@ -30,6 +34,7 @@ const createProject = async (req, res) => {
     }
 }
 
+// PUT update project
 const updateProject = async (req, res) => {
     const { id: _id } = req.params;
     const project = req.body;
@@ -44,6 +49,7 @@ const updateProject = async (req, res) => {
     }
 }
 
+// DELETE project
 const deleteProject = async (req, res) => {
     const { id } = req.params;
     try {
