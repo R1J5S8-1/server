@@ -25,6 +25,7 @@ const getProject = async (req, res) => {
 // POST create project
 const createProject = async (req, res) => {
     const project = req.body;
+    req.header('Content-Type', 'application/json');
     const newProject = new projects(project);
     try {
         await newProject.save();
@@ -53,7 +54,7 @@ const updateProject = async (req, res) => {
 const deleteProject = async (req, res) => {
     const { id } = req.params;
     try {
-        await projects.findByIdAndRemove(id);
+        await projects.findByIdAndDelete(id);
         res.json({ message: 'Project deleted successfully' });
     } catch (error) {
         res.status(409).json({ message: error.message });

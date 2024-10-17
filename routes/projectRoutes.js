@@ -8,6 +8,10 @@ const {
     deleteProject
 } = require('../controller/projectController');   //importing controller
 
+router.get('/', (req, res) => {
+    res.send('Hello you are inside projects!');
+})
+
 // GET all projects
 router.get('/get', getProjects);
 
