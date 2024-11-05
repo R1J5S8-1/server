@@ -17,7 +17,7 @@ mongoose
 
 //checking root path
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! you are in root!");
 });
 
 app.use(express.json());    //to accept json data
